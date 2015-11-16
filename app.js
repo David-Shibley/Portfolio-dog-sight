@@ -20,7 +20,7 @@ $(document).ready(function() {
       console.log(error);
     }
     imageObj.onload = function() {
-      context.drawImage(imageObj, 0, 0);
+      context.drawImage(imageObj, 0, 0, 300, 300);
     };
     imageObj.src = imgURL;
   });
