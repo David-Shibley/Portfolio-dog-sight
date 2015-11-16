@@ -12,16 +12,37 @@ $(document).ready(function() {
 
   var base64img = canvas.toDataURL();
   console.log(base64img);
-  $('button').click(function(event) {
-    var imgURL = $('#input_url').val();
-    var imageObj = new Image();
+
+  var imgFile = null;
+  var imgURL = null;
+  var paintPricture = function(event) {
+    if($('#input_file')[0].files.length > 0){
+      imgFile = $('#input_file')[0].files[0];
+      var fileReader = new FileReader();
+      fileReader.onload = function() {
+        console.log(fileReader.result);
+        setImageURL(fileReader.result)
+      }
+      fileReader.readAsDataURL(imgFile);
+    } else {
+      imgURL = $('#input_url').val();
+      setImageURL(imgURL);
+    }
     event.preventDefault();
+  };
+
+  $('button').click(paintPricture);
+
+
+  function setImageURL(url) {
+    var imageObj = new Image();
     imageObj.onerror = function(error) {
       console.log(error);
     }
     imageObj.onload = function() {
       context.drawImage(imageObj, 0, 0, 300, 300);
     };
-    imageObj.src = imgURL;
-  });
+
+    imageObj.src = url
+  }
 });
