@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
     <!-- Header should contain social media labels -->
@@ -14,9 +16,9 @@
     <main>
       <!-- This will contain the main background image and the filtered image -->
       <div class="main">
-        <div class="television">
-          <img src="#"/>
-        </div>
+        <canvas id="canvas">
+
+        </canvas>
       </div>
       <!-- This will be the form that submits the image to be filtered -->
       <form class="input-form">
@@ -28,9 +30,10 @@
         <fieldset>
           <legend>Select using one of the following:</legend>
           <label for="input_file">Image URL</label>
-          <input type="text" id="input_url">
+          <input type="text" id="input_url" autofocus="autofocus">
           <label for="input_file">File</label>
           <input type="file" id="input_file">
+          <button type="submit">Submit</button>
         </fieldset>
       </form>
       <!-- This will be the conainter for the favorites display -->
