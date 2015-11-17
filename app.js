@@ -2,6 +2,8 @@
 
 $(document).ready(function() {
   var canvas = document.getElementById('canvas');
+  canvas.height = 300;
+  canvas.width = 300;
   var context = null;
   var backgroundPic = new Image();
   if (canvas.getContext) {
@@ -13,6 +15,8 @@ $(document).ready(function() {
   var base64img = canvas.toDataURL();
   console.log(base64img);
 
+  var televisionHeight = $('#canvas').height();
+  var televisionWidth = $('#canvas').width();
   var imgFile = null;
   var imgURL = null;
   var paintPricture = function(event) {
@@ -40,9 +44,10 @@ $(document).ready(function() {
       console.log(error);
     }
     imageObj.onload = function() {
-      context.drawImage(imageObj, 0, 0, 300, 300);
+      context.drawImage(imageObj, 0, 0, televisionWidth, televisionHeight);
     };
+    imageObj.src = url;
 
-    imageObj.src = url
+    console.log(televisionWidth);
   }
 });

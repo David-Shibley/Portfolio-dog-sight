@@ -12,12 +12,6 @@ main {
   border-radius: 10px;
 }
 
-#canvas {
-  /*background-color: green;*/
-  width: 300px;
-  height: 300px;
-}
-
 .input-form {
   height: 30px;
 }
