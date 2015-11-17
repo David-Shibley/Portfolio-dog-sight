@@ -12,6 +12,20 @@ $(document).ready(function() {
     alert('Canvas not supported');
   }
 
+  // $.get('https://api.shutterstock.com/v2/images/search?fields=data(id,preview_url)', function(data) {
+
+  var clientID = '1ae470d8641474a7bf10';
+  var clientSecret = 'baded4ad3c3894bbc8373de7c31e3eef8bac25db';
+  $.ajax({
+    url: 'https://api.shutterstock.com/v2/images/search?query=*',
+    headers: {
+      Authorization: 'Basic ' + window.btoa(clientID + ':' + clientSecret)
+    }
+  }).done(function(data) {
+    dataStuff = data;
+    console.log(dataStuff);
+  })
+
   var base64img = canvas.toDataURL();
   console.log(base64img);
 
@@ -25,7 +39,9 @@ $(document).ready(function() {
       var fileReader = new FileReader();
       fileReader.onload = function() {
         console.log(fileReader.result);
-        setImageURL(fileReader.result)
+        var processedImage = imgprocess(fileReader.result, true, true, 8);
+        console.log(processedImage);
+        setImageURL(processedImage);
       }
       fileReader.readAsDataURL(imgFile);
     } else {
