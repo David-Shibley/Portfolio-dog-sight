@@ -16,6 +16,13 @@ main {
   height: 30px;
 }
 
+.make-pic {
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+}
+
 @media (max-width: 800px) {
   main {
     width: auto;

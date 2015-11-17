@@ -21,13 +21,17 @@
         <canvas id="canvas">
 
         </canvas>
+        <canvas id="workingCanvas" width="300" height="300">
+
+        </canvas>
       </div>
       <!-- This will be the form that submits the image to be filtered -->
+      <div id="browse">
+        <button type="button" class="make-pic">Browse random images</button>
+        <!-- <img src="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/Computer-wallpaper-backgrounds-12.jpg" data-url="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/Computer-wallpaper-backgrounds-12.jpg" /> -->
+        <hr>
+      </div>
       <form class="input-form">
-        <!-- This will be the image feed from the api -->
-        <div id="carousel">
-
-        </div>
         <!-- This will be the fieldset with different input types: URL and file -->
         <fieldset>
           <legend>Select using one of the following:</legend>
@@ -36,6 +40,7 @@
           <label for="input_file">File</label>
           <input type="file" id="input_file">
           <button type="submit">Submit</button>
+          <!-- This will be the image feed from the api -->
         </fieldset>
       </form>
       <!-- This will be the conainter for the favorites display -->
