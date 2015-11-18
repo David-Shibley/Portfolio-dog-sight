@@ -21,18 +21,11 @@
         <canvas id="canvas">
 
         </canvas>
-        <canvas id="workingCanvas" width="300" height="300">
-
-        </canvas>
-        <div class="favorite-button">
-          <p>
-            Click to add to favorites!
-          </p>
-        </div>
       </div>
       <!-- This will be the form that submits the image to be filtered -->
       <div id="browse">
         <button type="button" class="make-pic">Browse random images</button>
+        <button type="button" class="favorite-button">Click to add to favorites!</button>
         <!-- <img src="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/Computer-wallpaper-backgrounds-12.jpg" data-url="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/Computer-wallpaper-backgrounds-12.jpg" /> -->
         <hr>
       </div>
@@ -44,12 +37,12 @@
           <input type="text" id="input_url" autofocus="autofocus">
           <label for="input_file">File</label>
           <input type="file" id="input_file">
-          <button type="submit">Submit</button>
+          <button type="submit" class="submit">Submit</button>
           <!-- This will be the image feed from the api -->
         </fieldset>
       </form>
       <!-- This will be the conainter for the favorites display -->
-      <aside class="favorites"> 
+      <aside class="favorites">
 
       </aside>
     </main>

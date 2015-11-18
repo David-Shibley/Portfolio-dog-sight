@@ -16,6 +16,7 @@ $(document).ready(function() {
   var clientSecret = 'baded4ad3c3894bbc8373de7c31e3eef8bac25db';
   // The call to shutterstock server
   var createBrowseImages = function() {
+    console.log("Clickedy");
       $.ajax({
       url: 'https://api.shutterstock.com/v2/images/search?query=',
       headers: {
@@ -34,7 +35,7 @@ $(document).ready(function() {
 
         $('#browse').append($imageTemplate);
       }
-      // console.log(data);
+      console.log(data);
     });
   };
   var base64img = canvas.toDataURL();
@@ -73,7 +74,7 @@ $(document).ready(function() {
   //   $(this).toggleClass('selected');
   // })
 
-  $('button').click(paintPicture);
+  $('.submit').click(paintPicture);
   $('.make-pic').click(createBrowseImages);
   $('.favorite-button').click(addFavoritesToLocal);
 
@@ -93,10 +94,10 @@ $(document).ready(function() {
   //   }
   function addFavoritesToLocal(event) {
     console.log('Clicked');
-    // $favoritesImage = $("<img src=\"" + base64img + "\"");
-    $justtesting = $("<div class=\"test\">Test</div>")
-    $('.favorites').append($justtesting);
-    console.log(dataURL);
+    var base64image = canvas.toDataURL();
+    $favoritesImage = $("<img src='" + base64image + "'>");
+    $('.favorites').append($favoritesImage);
+    console.log(base64image);
     }
 
 

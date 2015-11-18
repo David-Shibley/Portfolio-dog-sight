@@ -4,6 +4,11 @@ main {
   margin: 10px;
 }
 
+#canvas {
+  height: 300px;
+  width: 300px;
+}
+
 .main {
   background-image: url("http://i.imgur.com/4rwv5Wv.jpg");
   background-color: red;
@@ -20,8 +25,8 @@ main {
 }
 
 .favorite-button {
-  align-self: flex-end;
   text-align: center;
+  align-self: flex-end;
   width: 200px;
   height: 50px;
   border-radius: 10px;
@@ -35,6 +40,8 @@ main {
 
 .make-pic {
   font-size: 20px;
+  width: 200px;
+  height: 50px;
   border-radius: 10px;
   background-color: blue;
   color: white;
@@ -45,7 +52,7 @@ main {
     width: auto;
   }
   .input-form {
-    transform: translate(0px, -520px);
+    transform: translate(0px, -60px);
   }
   .main {
     margin-top: 100px;
