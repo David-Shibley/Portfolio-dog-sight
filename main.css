@@ -10,7 +10,15 @@ main {
   height: 430px;
   padding: 10px;
   border-radius: 10px;
+  /*display: flex;*/
 }
+
+/*.favorites-button {
+  align-self: flex-end;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}*/
 
 .input-form {
   height: 30px;
