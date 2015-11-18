@@ -75,6 +75,30 @@ $(document).ready(function() {
 
   $('button').click(paintPicture);
   $('.make-pic').click(createBrowseImages);
+  $('.favorite-button').click(addFavoritesToLocal);
+
+  // function loadCanvas() {
+  //     var canvas = document.getElementsByClassName("favorites");
+  //     var context = canvas.getContext("2d");
+  //     var dataURL = localStorage.getItem("favorites");
+  //
+  //     var img = new Image();
+  //     img.src = dataURL;
+  //     img.onload = function () {
+  //         context.drawImage(img, 0, 0);
+  //     };
+  //   };
+  // window.onload = function () {
+  //     loadCanvas();
+  //   }
+  function addFavoritesToLocal(event) {
+    console.log('Clicked');
+    // $favoritesImage = $("<img src=\"" + base64img + "\"");
+    $justtesting = $("<div class=\"test\">Test</div>")
+    $('.favorites').append($justtesting);
+    }
+
+
 
 
   function setImageURL(url) {
