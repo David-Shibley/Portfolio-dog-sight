@@ -97,6 +97,12 @@ $(document).ready(function() {
     var base64image = canvas.toDataURL();
     $favoritesImage = $("<img src='" + base64image + "'>");
     $('.favorites').append($favoritesImage);
+    if(typeof(Storage) !== "undefined") {
+        // Code for localStorage/sessionStorage.
+        localStorage.setItem('favorite', base64image);
+    } else {
+        console.log('Sorry! No Web Storage support..');
+    }
     console.log(base64image);
     }
 
