@@ -18,7 +18,7 @@ $(document).ready(function() {
   var createBrowseImages = function() {
     console.log("Clickedy");
       $.ajax({
-      url: 'https://api.shutterstock.com/v2/images/search?query=',
+      url: 'https://api.shutterstock.com/v2/images/search?query=potatoe',
       headers: {
         Authorization: 'Basic ' + window.btoa(clientId + ':' + clientSecret)
       }

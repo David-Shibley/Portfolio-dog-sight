@@ -22,21 +22,22 @@
 
         </canvas>
       </div>
-      <!-- This will be the form that submits the image to be filtered -->
-      <div id="browse">
+        <div class="browse">
         <button type="button" class="make-pic">Browse random images</button>
         <button type="button" class="favorite-button">Click to add to favorites!</button>
+        </div>
+      <!-- This will be the form that submits the image to be filtered -->
+      <div id="browse">
         <!-- <img src="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/Computer-wallpaper-backgrounds-12.jpg" data-url="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/Computer-wallpaper-backgrounds-12.jpg" /> -->
-        <hr>
       </div>
       <form class="input-form">
         <!-- This will be the fieldset with different input types: URL and file -->
         <fieldset>
-          <legend>Select using one of the following:</legend>
-          <label for="input_file">Image URL</label>
-          <input type="text" id="input_url" autofocus="autofocus">
-          <label for="input_file">File</label>
-          <input type="file" id="input_file">
+          <legend>Or select your own picture:</legend>
+          <label for="input_file">Select by image URL</label>
+          <input type="text" id="input_url" autofocus="autofocus"><br>
+          <label for="input_file">Select a file from you computer</label>
+          <input type="file" id="input_file"><br>
           <button type="submit" class="submit">Submit</button>
           <!-- This will be the image feed from the api -->
         </fieldset>
