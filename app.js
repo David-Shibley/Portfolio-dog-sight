@@ -96,6 +96,7 @@ $(document).ready(function() {
     // $favoritesImage = $("<img src=\"" + base64img + "\"");
     $justtesting = $("<div class=\"test\">Test</div>")
     $('.favorites').append($justtesting);
+    console.log(dataURL);
     }
 
 
