@@ -117,7 +117,15 @@ $(document).ready(function() {
     console.log(base64image);
     }
 
-
+  function addCurrentToLocal() {
+    var base64image = canvas.toDataURL();
+    if(typeof(Storage) !== "undefined") {
+        // Code for localStorage/sessionStorage.
+        localStorage.setItem('watch', base64image);
+    } else {
+        console.log('Sorry! No Web Storage support..');
+    }
+  }
 
 
   function setImageURL(url) {
@@ -129,6 +137,7 @@ $(document).ready(function() {
     imageObj.onload = function() {
       $('.favorite-image').css('display', 'none');
       context.drawImage(imageObj, 0, 0, televisionWidth, televisionHeight);
+      addCurrentToLocal.call();
       var imageData = context.getImageData(0, 0, imageObj.width, imageObj.height)
       // Processing image data
       var data = imageData.data;
@@ -157,4 +166,44 @@ $(document).ready(function() {
       imageObj.src = url;
     }
   }
+
+  var extractToken = function(hash) {
+    var match = hash.match(/access_token=(\w+)/);
+    return !!match && match[1];
+  };
+
+  var $post = $('.post');
+  var $msg = $('.hidden');
+
+  $post.click(function() {
+    var img = canvas.toDataURL();
+    localStorage.doUpload = true;
+    localStorage.imageBase64 = img.replace(/.*,/, '');
+  });
+
+  var token = extractToken(document.location.hash);
+  if (token && JSON.parse(localStorage.doUpload)) {
+    localStorage.doUpload = false;
+    $post.hide();
+    $msg.show();
+
+    $.ajax({
+      url: 'https://api.imgur.com/3/image',
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+        Accept: 'application/json'
+      },
+      data: {
+        image: localStorage.imageBase64,
+        type: 'base64'
+      },
+      success: function(result) {
+        var id = result.data.id;
+        window.location = 'https://imgur.com/gallery/' + id;
+      }
+    });
+  }
+
+
 });
