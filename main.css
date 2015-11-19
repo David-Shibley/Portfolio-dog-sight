@@ -51,15 +51,15 @@ button.submit {
   background-image: url("http://i.imgur.com/4rwv5Wv.jpg");
   background-color: red;
   height: 430px;
-  /*width: 780px;*/
+  position: relative;
   margin-bottom: 10px;
   border-radius: 10px;
 }
 
-.test {
-  height: 100px;
-  width: 100px;
-  background-color: red;
+.favorite-image {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .favorite-button {
@@ -68,8 +68,8 @@ button.submit {
 }
 
 .make-pic {
-  background-color: #009AFD;
-  color: white;
+  /*background-color: #009AFD;
+  color: white;*/
 }
 
 

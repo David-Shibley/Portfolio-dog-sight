@@ -11,6 +11,10 @@ $(document).ready(function() {
   }  else {
     alert('Canvas not supported, please make sure you are using the latest version of your browser.');
   }
+
+  var favoriteImage = localStorage.getItem('favorite')
+  var $favoritesImage = $("<img src='" + favoriteImage + "' class='favorite-image'>")
+  $('.main').append($favoritesImage);
   // API key information
   var clientId = '1ae470d8641474a7bf10';
   var clientSecret = 'baded4ad3c3894bbc8373de7c31e3eef8bac25db';
@@ -116,6 +120,7 @@ $(document).ready(function() {
       console.log(error);
     }
     imageObj.onload = function() {
+      $('.favorite-image').css('display', 'none');
       context.drawImage(imageObj, 0, 0, televisionWidth, televisionHeight);
       var imageData = context.getImageData(0, 0, imageObj.width, imageObj.height)
       // Processing image data
@@ -139,6 +144,6 @@ $(document).ready(function() {
 
     };
     imageObj.crossOrigin = 'anonymous';
-    imageObj.src = 'http://localhost:8000/' + url;
+    imageObj.src = 'http://img.g15.xyz/' + url;
   }
 });
