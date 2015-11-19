@@ -83,7 +83,12 @@ $(document).ready(function() {
   $('.submit').click(paintPicture);
   $('.make-pic').click(createBrowseImages);
   $('.favorite-button').click(addFavoritesToLocal);
-
+  $('#search_bar').keypress(function(event) {
+    if (event.which == 13) {
+      console.log("entered");
+      createBrowseImages.call();
+    }
+  });
   // function loadCanvas() {
   //     var canvas = document.getElementsByClassName("favorites");
   //     var context = canvas.getContext("2d");
