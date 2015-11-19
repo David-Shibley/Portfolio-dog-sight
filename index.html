@@ -17,35 +17,32 @@
     </header>
     <main>
       <!-- This will contain the main background image and the filtered image -->
+      <h1>Doggy Site</h1>
       <div class="main">
         <canvas id="canvas">
 
         </canvas>
       </div>
-        <div class="browse">
-        <input type="text" class="make-pic">Browse random images</button>
-        <button type="button" class="favorite-button">Click to add to favorites!</button>
-        </div>
+      <div class="browse">
+        <input id="search_bar" type="text" class="search" placeholder='Search for images' autofocus="autofocus">
+        <a href="#browse"><button type="button" class="submit search make-pic">search</button></a>
+        <button type="button" class="favorite-button">Click to save for next time!</button>
       <!-- This will be the form that submits the image to be filtered -->
-      <div id="browse">
-        <!-- <img src="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/Computer-wallpaper-backgrounds-12.jpg" data-url="http://www.hdwallpapers3d.com/wp-content/uploads/2013/04/Computer-wallpaper-backgrounds-12.jpg" /> -->
-      </div>
       <form class="input-form">
         <!-- This will be the fieldset with different input types: URL and file -->
-        <fieldset>
-          <legend>Or select your own picture:</legend>
+          <h2>Or select your own picture:</h2>
           <label for="input_file">Select by image URL</label>
-          <input type="text" id="input_url" autofocus="autofocus"><br>
+          <input type="text" id="input_url"><br>
           <label for="input_file">Select a file from you computer</label>
           <input type="file" id="input_file"><br>
-          <button type="submit" class="submit">Submit</button>
+          <button type="submit" id="submit" class="submit">Submit</button>
           <!-- This will be the image feed from the api -->
-        </fieldset>
       </form>
+      </div>
       <!-- This will be the conainter for the favorites display -->
-      <aside class="favorites">
-
-      </aside>
+      <div id="browse">
+        <h3>Click on image to filter it</h3>
+      </div>
     </main>
     <footer>
     </footer>

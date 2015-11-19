@@ -3,33 +3,9 @@
 }
 
 main {
-  height: 90vh;
   background-color: #EEEEEE;
 }
 
-button {
-  text-align: center;
-  font-size: 20px;
-  width: 49.5%;
-  height: 50px;
-  border-radius: 10px;
-}
-
-fieldset {
-  background-color: #EEEEEE;
-  border-radius: 5px;
-  font-size: 20px;
-  width: 760px;
-}
-
-legend {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-input {
-  font-size: 16px;
-}
 
 img {
   height: 300px;
@@ -40,7 +16,6 @@ img {
 button.submit {
   background-color: #009AFD;
   color: white;
-  width: 200px;
 }
 #canvas {
   height: 300px;
@@ -53,6 +28,7 @@ button.submit {
   height: 430px;
   position: relative;
   margin-bottom: 10px;
+  margin-top: 20px;
   border-radius: 10px;
 }
 
@@ -62,20 +38,17 @@ button.submit {
   top: 0;
 }
 
+.search {
+  width: 400px;
+  height: 25px;
+}
+
 .favorite-button {
   background-color: #FFFE03;
   color: black;
+  height: 25px;
 }
 
-.make-pic {
-  /*background-color: #009AFD;
-  color: white;*/
-}
-
-
-.input-form {
-  height: 30px;
-}
 
 @media (max-width: 800px) {
   main {
@@ -87,8 +60,8 @@ button.submit {
 }
 
 @media (max-width: 400px) {
-  .main {
-    background-color: blue;
+  * {
+    width: 100%;
   }
 }
 

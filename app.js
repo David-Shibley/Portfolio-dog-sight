@@ -19,10 +19,14 @@ $(document).ready(function() {
   var clientId = '1ae470d8641474a7bf10';
   var clientSecret = 'baded4ad3c3894bbc8373de7c31e3eef8bac25db';
   // The call to shutterstock server
+  var searchValue = '';
+  var setSearchValue = $('#search_bar').keyup(function() {
+    searchValue = $(this).val();
+  })
   var createBrowseImages = function() {
-    console.log("Clickedy");
+    console.log(searchValue);
       $.ajax({
-      url: 'https://api.shutterstock.com/v2/images/search?query=potatoe',
+      url: 'https://api.shutterstock.com/v2/images/search?query=' + searchValue,
       headers: {
         Authorization: 'Basic ' + window.btoa(clientId + ':' + clientSecret)
       }
@@ -37,7 +41,7 @@ $(document).ready(function() {
           setImageURL(this.dataset.url);
         })
 
-        $('#browse').append($imageTemplate);
+        $('#browse').prepend($imageTemplate);
       }
       console.log(data);
     });
@@ -56,14 +60,12 @@ $(document).ready(function() {
       imgFile = $('#input_file')[0].files[0];
       var fileReader = new FileReader();
       fileReader.onload = function() {
-        var processedImage = imgprocess(fileReader.result, true, true, 8);
+        var processedImage = fileReader.result;
         setImageURL(processedImage);
       }
       fileReader.readAsDataURL(imgFile);
-    // } else if ($('img').hasClass('selected')) {
-    //   imgURL = $('.selected').data('url');
-    //   console.log(imgURL);
-    //   setImageURL(imgURL);
+
+
     }
 
     else {
