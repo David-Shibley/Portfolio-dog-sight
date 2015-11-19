@@ -151,6 +151,10 @@ $(document).ready(function() {
 
     };
     imageObj.crossOrigin = 'anonymous';
-    imageObj.src = 'http://img.g15.xyz/' + url;
+    if (imageObj.src.indexOf('http') == '0') {
+      imageObj.src = 'http://img.g15.xyz/' + url;
+    } else {
+      imageObj.src = url;
+    }
   }
 });
