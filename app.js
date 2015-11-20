@@ -80,7 +80,7 @@ $(document).ready(function() {
   //   $(this).toggleClass('selected');
   // })
 
-  $('.submit').click(paintPicture);
+  $('#submit').click(paintPicture);
   $('.make-pic').click(createBrowseImages);
   $('.favorite-button').click(addFavoritesToLocal);
   $('#search_bar').keypress(function(event) {
