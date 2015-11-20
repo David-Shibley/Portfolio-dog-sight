@@ -1,5 +1,6 @@
 *{
   margin: auto;
+  margin-bottom: 10px;
 }
 
 body {
@@ -8,7 +9,7 @@ body {
 }
 
 main {
-  background-color: #C0FDFB;
+  background-color: #F4F4ED;
   margin-top: 50px;
 }
 
@@ -29,9 +30,14 @@ img {
 }
 
 button.submit {
-  background-color: #5D737E;
+  background-color: #496F5D;
   color: white;
 }
+button.post {
+  background-color: #6279B8;
+  color: white;
+}
+
 #canvas {
   height: 300px;
   width: 300px;
@@ -61,8 +67,8 @@ button.submit {
 }
 
 .favorite-button {
-  background-color: #FFFE03;
-  color: black;
+  background-color: #6279B8;
+  color: white;
 }
 
 
