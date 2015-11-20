@@ -38,7 +38,7 @@ button.submit {
 }
 
 .main {
-  background-image: url("http://i.imgur.com/4rwv5Wv.jpg");
+  background-image: url("images/main_pic_converted.jpg");
   background-color: red;
   height: 430px;
   position: relative;
@@ -63,6 +63,14 @@ button.submit {
   color: black;
 }
 
+.post {
+  height: 50px;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: red;
+  color: white;
+}
 
 @media (max-width: 800px) {
   main {

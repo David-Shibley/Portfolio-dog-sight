@@ -141,21 +141,22 @@ $(document).ready(function() {
       var imageData = context.getImageData(0, 0, imageObj.width, imageObj.height)
       // Processing image data
       var data = imageData.data;
-      r_weight = 0.34;
-      g_weight = 0.5;
-      b_weight = 0.16;
-      r_intensity = 1;
-      g_intensity = 1;
-      b_intensity = 1;
-      for(var i = 0; i < data.length; i += 4) {
-          var brightness = r_weight * data[i] + g_weight * data[i + 1] + b_weight * data[i + 2];
-          // red
-          data[i] = r_intensity * brightness;
-          // green
-          data[i + 1] = g_intensity * brightness;
-          // blue
-          data[i + 2] = b_intensity * brightness;
-      }
+      imgprocess(imageData, true, true, 4);
+      // r_weight = 0.34;
+      // g_weight = 0.5;
+      // b_weight = 0.16;
+      // r_intensity = 1;
+      // g_intensity = 1;
+      // b_intensity = 1;
+      // for(var i = 0; i < data.length; i += 4) {
+      //     var brightness = r_weight * data[i] + g_weight * data[i + 1] + b_weight * data[i + 2];
+      //     // red
+      //     data[i] = r_intensity * brightness;
+      //     // green
+      //     data[i + 1] = g_intensity * brightness;
+      //     // blue
+      //     data[i + 2] = b_intensity * brightness;
+      // }
       context.putImageData(imageData, 0, 0);
 
     };
