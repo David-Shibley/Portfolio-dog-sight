@@ -85,6 +85,20 @@ button.post {
   * {
     width: 100%;
   }
+  .main {
+    background-image: url("http://i.imgur.com/XjEWlhQ.png");
+  }
+  img {
+    margin:0 auto;
+  }
+  #browse {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #canvas {
+    transform: translate(0px, 10px);
+  }
 }
 
 @media (min-width: 850px) {
