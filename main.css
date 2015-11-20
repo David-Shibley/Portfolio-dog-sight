@@ -81,15 +81,21 @@ button.post {
   }*/
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   * {
     width: 100%;
   }
   .main {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
     background-image: url("http://i.imgur.com/XjEWlhQ.png");
   }
   img {
     margin:0 auto;
+  }
+  p {
+    padding-left: 10px;
   }
   #browse {
     width: 400px;
